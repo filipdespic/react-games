@@ -4,6 +4,12 @@ interface Props {
   items: string[];
   heading: string;
   onSelectItem: (item: string) => void;
+  uer: User;
+}
+
+interface User {
+  name: string;
+  age: Int16Array;
 }
 
 function ListGroup({ items, heading, onSelectItem }: Props) {
@@ -24,6 +30,7 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
             key={item}
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item);
             }}
           >
             {item}
